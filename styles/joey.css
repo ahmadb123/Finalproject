@@ -1,0 +1,275 @@
+#headimage{
+    max-width: 300px;
+    width: 200%;
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 10px ridge green ;
+    float: left;
+
+}
+
+header h2{
+    font-size: 350%;
+    padding: 1.25em;
+    text-align: center;
+    color: white;
+    animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+    0% {background-color: red;}
+    50%{background-color:green;}
+    75%{background-color:brown;}
+    100% {background-color: red;}
+  }
+
+#gifimage{
+    float: right;
+    max-width: 300px;
+    width: 200%;
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 10px ridge green ;
+}
+
+h1{
+    font-size: 200%;
+    color: white;
+    
+}
+
+#nav_menu {
+    position: sticky;
+    top: 0;
+}
+.container {
+    display: flex;
+    list-style: none;
+    background-color: steelblue;
+    position: relative;
+    
+}
+.container li {
+    flex: 1;
+}
+.container li a {
+    display: block;
+    padding: .75em 1em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color .5s;
+}
+.container li a:hover {
+    color: black;
+    background-color: lightsteelblue;
+}
+
+/*  navmenu second tier code */
+.container ul {
+    display: none;
+    background-color: steelblue;
+    width: 20%;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    box-shadow: 7px 7px 15px -1px gray;
+}
+.container ul li {
+    flex-direction: column;
+   
+}
+.container ul li a {
+    padding-left: 1em;
+    display: block;
+    width: 100%;
+   
+}
+.container li:hover > ul {
+    display: block;
+}
+
+
+#nav_list h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+#nav_list ul {
+    list-style: none;
+}
+#nav_list ul li {
+    width: 100%;
+    margin: 0 auto .5em; /* 1st value top; middle value sides; 3rd value bottom */
+    
+}
+#nav_list ul li a {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: lightsteelblue;
+    padding: .5em 0 .5em .5em;
+    color: black;
+    border-radius: 25px;
+    transition: all 1s; 
+}
+#nav_list ul li a:hover {
+    color: white;
+    background-color: steelblue;
+    padding: .5em 0 .5em 1.5em;
+}
+
+
+
+main {
+    padding: 0 .3em;
+    clear: both;
+}
+aside {
+    width: 28%;
+    margin: 0 auto;
+    padding: 10px .8em 0;
+}
+section {
+    width: 40%;
+    float: left;
+    padding-top: 10px;
+    
+}
+
+#leftaside {
+    float: left;
+}
+#rightaside {
+    float: right;
+}
+
+
+article{
+    display: flex;
+    flex-direction: column;
+}
+
+section h3{
+    font-size: 200%;
+    color: white;
+    padding: 1em;
+    margin-bottom: 5px;
+}
+
+section h4{
+    color: white;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+
+
+section p{
+    margin: 0 2em 1.5em;
+    color: white;
+    font-size: 100%;
+}
+
+#aside1{
+    float: right;
+    max-width: 300px;
+    width: 100%;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+
+
+section a:link, section a:visited {
+    color: maroon;
+}
+section a:hover, section a:active {
+    color: steelblue;
+}
+
+aside a:link, aside a:visited {
+    color: steelblue;
+}
+aside a:hover, aside a:active {
+    color: maroon;
+}
+
+
+
+/* Hide the mobilemenu */
+#mobilemenu {
+    display: none;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+    html{
+        background-image: none;
+    }
+    body {
+        border: none;
+        box-shadow: none;
+        font-size: 90%;
+    }
+    #leftaside {
+        display: none;
+    }
+    section {
+        width: 70%;
+        padding-left: 1em;
+    }
+  }
+
+@media only screen and (max-width: 767px) {
+    
+    /* Hide the horizontal nav_menu */
+    #nav_menu {
+        display: none;
+    }
+
+    /* Display the slicknav mobilemenu */
+    #mobilemenu {
+        display: block;
+    }
+
+    /* Format the slicknav */
+    .slicknav_menu {
+        background-color: steelblue !important;
+    }
+
+    /* Reduce the h2 font size in the header */
+    header h2 {
+        font-size: 200%;
+    }
+    h1 {
+        font-size: 200%;
+    }
+    
+    section, aside {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: .5em;
+    }
+
+    /* Un-float the logo image in the header and center it */
+    #headimage {
+        float: none;
+        padding: .5em;
+        display: block;
+        margin: 0 auto;
+    }
+    #gifimage {
+        float: none;
+        padding: .5em;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Center the rest of the header elements */
+    header h2 {
+        text-align: center;
+    }
+}

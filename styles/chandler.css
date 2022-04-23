@@ -1,0 +1,160 @@
+#headimage {
+    max-width: 210px;
+    width: 200%;
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 10px ridge green;
+    float: left;
+}
+
+
+
+header h2 {
+    font-size: 350%;
+    padding: 1.25em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: white;
+    animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: brown;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+#gifimage {
+    float: right;
+    max-width: 350px;
+    width: 350%;
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 10px ridge green;
+}
+
+
+/* components */
+.testimonial-grid {
+    display: grid;
+    gap: 1.5em;
+    grid-template-areas:
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+}
+
+#gridimage1 {
+    max-width: 200px;
+    width: 100%;
+    border: 5px ridge blueviolet;
+    float: right;
+}
+
+#gridimage2 {
+    border: 5px ridge blueviolet;
+    float: right;
+    max-width: 200px;
+    width: 100%;
+}
+#gridimage3{
+    border: 5px ridge blueviolet;
+    float: right;
+    max-width: 200px;
+    width: 100%;
+}
+
+#vid1{
+    border: 5px ridge blueviolet;
+    float: right;
+    max-width: 300px;
+    width: 100%;
+}
+
+#vid2{
+    border: 5px ridge blueviolet;
+    float: right;
+    max-width: 300px;
+    width: 100%;
+}
+
+#gridimage4{
+    border: 5px ridge blueviolet;
+    max-width: 500px;
+    width: 100%;
+}
+.testimonial-grid h2 {
+    color: white;
+    font-size: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    gap: 1px;
+}
+
+.testimonial-grid p {
+    font-size: 100%;
+    color: white;
+    padding: 0.5em
+}
+
+@media (min-width: 40em) {
+    .testimonial-grid {
+        grid-template-areas:
+            'one one two five'
+            'three four four five';
+    }
+}
+
+.testimonial:nth-child(1) {
+    grid-area: one;
+}
+
+
+.testimonial:nth-child(2) {
+    grid-area: two;
+}
+
+
+.testimonial:nth-child(3) {
+    grid-area: three;
+}
+
+
+.testimonial:nth-child(4) {
+    grid-area: four;
+}
+
+
+.testimonial:nth-child(5) {
+    grid-area: five;
+}
+
+/* @media (min-width: 40em){
+  .testimonial-grid{
+      grid-template-columns: repeat(4, 1fr);
+  }
+  .testimonial:last-child{
+      grid-column-start: 4;
+      grid-row-start: 1;
+  }
+  .testimonial:last-child{
+      grid-row: 1 / span 2;
+  }
+  .grid-col-span-2{
+      grid-column: span 2;
+  }
+  
+  } */

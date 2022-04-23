@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/rachel.css">
+    <title>Rachel's Page</title>
+</head>
+
+<body>
+
+    <header class="clearfix">
+        <img id="headimage" src="images/rachel.jpeg">
+        <img id="gifimage" src="images/rachel1.gif">
+        <h2>
+            No uterus, no opinion
+        </h2>
+    </header>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav_bar">
+        <div class="container-fluid" id="nav_menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Main Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="joey.html">Joey's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monica.html">Monica's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ross.html">Ross's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chandler.html">Chandler's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rachel.html">Rachel's Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+
+
+        <aside id="leftaside">
+            <!-- nav_list - this code makes up the vertical navigation list in the left column -->
+            <nav id="nav_list">
+
+                <h2>Best Of Rachel Vids</h2>
+
+
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=tiHYs--lt-0" target="_blank">Could i wear any more
+                            clothes?
+                        </a></li>
+                    <li><a href="https://www.youtube.com/watch?v=6OHTvBhwHdo" target="_blank">
+                            WE WERE ON A BREAK!</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=Vt83zQdunBo" target="_blank">Be Your Own Wind
+                            Keeper</a>
+                    </li>
+                    <li><a href="https://www.youtube.com/watch?v=02l6OL0Op9I" target="_blank">Rachel and Ross Try to
+                            Move On</a></li>
+                </ul>
+
+                <img id="leftimage" src="images/rachel1.jpeg"> 
+                
+            </nav>
+
+
+
+
+
+        </aside>
+        <div class="hero">
+            <h1>Rachel<span> Green</span></h1>
+            <p>Famous We Were On A Break </p>
+
+        </div>
+
+        <div class="sales-points">
+            <div class="sales-point ">
+                <h2>Unafraid Of Tarantulas</h2>
+                <p>Rachel tends to not be the toughest of the group and usually scares easier than the rest, but there
+                    is one thing that does not freak her out like it does most people. In season 7, episode 10 when
+                    Phoebe's feelings are hurt that Rachel is having more fun with Joey than she did with her, Phoebe
+                    buys Joey obnoxious gifts in an attempt to drive Rachel back to her.</p>
+            </div>
+            <div class="sales-point ">
+                <h2>Favorite Book Little Women</h2>
+                <p>Throughout Friends, Rachel is never seen as much of a reader, but she does have a favorite book. In
+                    season 3, episode 13, we discover that not only is Joey's favorite book The Shining by Stephen King,
+                    but Rachel's favorite read is Little Women by Louisa May Alcott. She admits that Little Women is the
+                    only book she's ever read more than one time attempt to drive Rachel back to her..</p>
+            </div>
+
+        </div>
+
+
+
+        <div><button onclick="topFunction()" id="cornerBtn" title="Go to top">Return To Top</button></div>
+        <script>
+            // When the user scrolls down 800px from the top of the document, show the button
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    document.getElementById("cornerBtn").style.display = "block";
+                } else {
+                    document.getElementById("cornerBtn").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            window.onload = function () {
+                var d = new Date();
+                document.getElementById("copyright").innerHTML = d.getFullYear();
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="copyright"></span> Rachel's Page!
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

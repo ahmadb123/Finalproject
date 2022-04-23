@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/ross.css">
+    <title>Ross's Page</title>
+</head>
+
+<body>
+    <header class="clearfix">
+        <img id="headimage" src="images/ross.jpeg">
+        <img id="gifimage" src="images/ross.gif">
+        <h2>
+            <strong> WE WERE ON A BREAK!!</strong>
+        </h2>
+
+    </header>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav_bar">
+        <div class="container-fluid" id="nav_menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Main Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="joey.html">Joey's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monica.html">Monica's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ross.html">Ross's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chandler.html">Chandler's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rachel.html">Rachel's Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="hero">
+            <h1>Ross<span> Geller</span></h1>
+            <p>Famous We Were On A Break </p>
+        </div>
+
+        <div class="sales-points">
+            <div class="sales-point">
+                <h2>Why He Slept With Xerox Girl</h2>
+                <p>We’d heard rumors about the Xerox girl from Chandler and Joey in the early stages of Friends, but
+                    none of us could’ve ever imagined that it would be Ross who slept with her..</p>
+            </div>
+            <div class="sales-point">
+                <h2>Not Accepting Full Responsibility</h2>
+                <p>Not long after Ross and Rachel broke up for the first time, it appeared as if they’d been able to
+                    settle their differences. However, after finally reading her incredibly long letter and realizing
+                    that she wanted him to take full responsibility for their break-up, Ross’ ego just wouldn’t let her
+                    get away with that.</p>
+            </div>
+            <div class="sales-point">
+                <h2>Divorce Teasing</h2>
+                <p>Ross has had to go through the process of getting a divorce with three different women: Carol, Emily,
+                    and Rachel. Despite the fact that two of those two instances were very serious incidents that seemed
+                    to seriously hamper his personal life for quite some time, the gang always found it funny to mock
+                    him relentlessly about it..</p>
+            </div>
+        </div>
+
+
+
+    </main>
+    <div><button onclick="topFunction()" id="cornerBtn" title="Go to top">Return To Top</button></div>
+    <script>
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                document.getElementById("cornerBtn").style.display = "block";
+            } else {
+                document.getElementById("cornerBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        window.onload = function () {
+            var d = new Date();
+            document.getElementById("copyright").innerHTML = d.getFullYear();
+        }
+    </script>
+    <!-- footer - the bottom section of the web page, containing the copyright information -->
+    <footer>
+        <p>&copy; <span id="copyright"></span> Ross's Page!</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

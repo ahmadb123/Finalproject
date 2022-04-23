@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/joey.css">
+
+
+    <title>Joey's Page</title>
+</head>
+
+<body>
+    <header class="clearfix">
+        <img id="headimage" src="images/joe1.jpeg">
+        <img id="gifimage" src="images/joey2.gif">
+        <h2>
+            HOW YOU DOIN?
+        </h2>
+
+    </header>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav_bar">
+        <div class="container-fluid" id="nav_menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Main Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="joey.html">Joey's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monica.html">Monica's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ross.html">Ross's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chandler.html">Chandler's Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rachel.html">Rachel's Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>Fun Facts About Joey</h1>
+
+        <aside id="leftaside">
+            <!-- nav_list - this code makes up the vertical navigation list in the left column -->
+            <nav id="nav_list">
+
+                <h2>Best Of Joey Vids</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=Iht75-LF7mE" target="_blank">The Famous How You
+                            Doin</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=mGxOxCFo0Ss" target="_blank">
+                            Joey's Fridge</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=IHJI6_VpH00" target="_blank">Joey Pushes Ross Into His
+                            Fridge</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=w5aG3Pd6R4c" target="_blank">Give Me 400 Dollars</a>
+                    </li>
+                    <li><a href="https://www.medicalnewstoday.com/articles/317314" target="_blank">Yoga workout</a></li>
+                </ul>
+            </nav>
+
+        </aside>
+
+
+        <!-- this section is the right column of the web page -->
+        <section>
+
+
+            <h3>FACTS</h3>
+
+            <h4>
+                #1 How You Doin’ :
+            </h4>
+            <p>
+                Since the beginning of the show, we have seen so many ladies around Joey that we cannot count them on
+                our fingers. His How You Doin is still one of the best pick-up lines ever made. No doubt Joey was a
+                Ladies man.
+            </p>
+
+            <h4>
+                #2 One Of The Eight Sibling:
+            </h4>
+            <p>
+                Everybody knows Joey Tribbiani had a big family, but seven sisters dude? That’s pretty crazy. It might
+                not have been difficult for him but it definitely got Chandler into trouble. LOL!
+            </p>
+            <h4>
+
+                #3 Matt LeBlanc Hated Joey & Rachel’s Affair :
+            </h4>
+            <p>
+                There might be a lot of people who ship Joey and Rachel’s relationship. But there is also a whole
+                different group of people who just hated their relationship. To the latter ones, congratulations, Matt
+                LeBlanc is also in the same group
+            </p>
+            <h4>
+                #4 Joey’s Character Was The Last To Be Finalized:
+            </h4>
+
+            <p>
+                Among all the six leads of FRIENDS, Joey’s character was the last one to be finalized. Matt LeBlanc had
+                only $11 when he was selected and from his first paycheck, the first thing that he bought was dinner.
+                The struggle was common in both Joey’s life and Matt LeBlanc’s life.
+            </p>
+
+        </section>
+
+        <aisde id="rightaisde">
+            <img id="aside1" src="images/aside1.jpeg">
+            <img id="aside1" src="images/aside2.png">
+            <img id="aside1" src="images/aside3.jpeg">
+            <img id="aside1" src="images/aside4.jpeg">
+
+        </aisde>
+        <!-- this aside is the left column of the webpage -->
+
+    </main>
+    <div><button onclick="topFunction()" id="cornerBtn" title="Go to top">Return To Top</button></div>
+
+    <script>
+
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                document.getElementById("cornerBtn").style.display = "block";
+            } else {
+                document.getElementById("cornerBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        window.onload = function () {
+            var d = new Date();
+            document.getElementById("copyright").innerHTML = d.getFullYear();
+        }
+    </script>
+    <!-- footer - the bottom section of the web page, containing the copyright information -->
+    <footer>
+        <p>&copy; <span id="copyright"></span> Joey's Page!</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
