@@ -122,3 +122,45 @@ header h2{
   
   }
   
+
+
+@media only screen and (max-width: 767px) {
+    
+  /* Hide the horizontal nav_menu */
+
+
+  /* Display the slicknav mobilemenu */
+  #mobilemenu {
+      display: block;
+  }
+
+  /* Format the slicknav */
+  .slicknav_menu {
+      background-color: steelblue !important;
+  }
+
+  /* Reduce the h2 font size in the header */
+
+  
+  section, aside {
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      padding: .5em;
+  }
+
+  /* Un-float the logo image in the header and center it */
+  #headimage,  #gifimage {
+      float: none;
+      padding: .5em;
+      display: block;
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .sales-points {
+    flex-direction: column;
+  }
+}
+

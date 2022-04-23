@@ -163,3 +163,68 @@ header h2{
     background-color: steelblue;
     padding: .5em 0 .5em 1.5em;
 }
+
+@media (max-width: 800px) {
+  .sales-points {
+    flex-direction: column;
+  }
+}
+
+
+#mobilemenu {
+  display: none;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+  html{
+      background-image: none;
+  }
+  body {
+      border: none;
+      box-shadow: none;
+      font-size: 90%;
+  }
+  #leftaside {
+      display: none;
+  }
+  section {
+      width: 70%;
+      padding-left: 1em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  
+  /* Hide the horizontal nav_menu */
+
+
+  /* Display the slicknav mobilemenu */
+  #mobilemenu {
+      display: block;
+  }
+
+  /* Format the slicknav */
+  .slicknav_menu {
+      background-color: steelblue !important;
+  }
+
+  /* Reduce the h2 font size in the header */
+
+  
+  section, aside {
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      padding: .5em;
+  }
+
+  /* Un-float the logo image in the header and center it */
+  #headimage,  #gifimage {
+      float: none;
+      padding: .5em;
+      display: block;
+      margin: 0 auto;
+  }
+}

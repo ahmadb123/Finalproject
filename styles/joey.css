@@ -196,8 +196,6 @@ aside a:hover, aside a:active {
 }
 
 
-
-/* Hide the mobilemenu */
 #mobilemenu {
     display: none;
 }
@@ -225,9 +223,7 @@ aside a:hover, aside a:active {
 @media only screen and (max-width: 767px) {
     
     /* Hide the horizontal nav_menu */
-    #nav_menu {
-        display: none;
-    }
+
 
     /* Display the slicknav mobilemenu */
     #mobilemenu {
@@ -240,12 +236,7 @@ aside a:hover, aside a:active {
     }
 
     /* Reduce the h2 font size in the header */
-    header h2 {
-        font-size: 200%;
-    }
-    h1 {
-        font-size: 200%;
-    }
+
     
     section, aside {
         float: none;
@@ -255,21 +246,10 @@ aside a:hover, aside a:active {
     }
 
     /* Un-float the logo image in the header and center it */
-    #headimage {
+    #headimage,  #gifimage {
         float: none;
         padding: .5em;
         display: block;
         margin: 0 auto;
-    }
-    #gifimage {
-        float: none;
-        padding: .5em;
-        display: block;
-        margin: 0 auto;
-    }
-
-    /* Center the rest of the header elements */
-    header h2 {
-        text-align: center;
     }
 }
