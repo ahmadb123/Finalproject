@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 public class GetLatestFixtures {
     public LiveFixtureInfo[] data;
+
     public static GetLatestFixtures getLatestFixtureByDate(LocalDate fromDate, LocalDate toDate) {
         Gson gson = new Gson();
         try {

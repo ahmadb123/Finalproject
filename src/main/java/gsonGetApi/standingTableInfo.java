@@ -5,6 +5,7 @@ public class standingTableInfo {
     private int position;
     private int points;
     private Participant participant;
+    private int season_id;
     
     public int getPosition()
     {
@@ -17,5 +18,9 @@ public class standingTableInfo {
     public Participant getTeamInfo()
     {
         return participant;
+    }
+    public int getSeasonId()
+    {
+        return season_id;
     }
 }

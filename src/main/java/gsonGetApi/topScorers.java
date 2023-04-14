@@ -1,22 +1,17 @@
 
 package gsonGetApi;
 
-
-public class playerName {
+public class topScorers {
     private String display_name;
     private String image_path;
-    private Position position;
-
-    public String getPlayerName()
+    
+    public String getScorerName()
     {
         return display_name;
     }
+    
     public String getPlayerImage()
     {
         return image_path;
-    }
-    public Position getPositionId()
-    {
-        return position;
     }
 }

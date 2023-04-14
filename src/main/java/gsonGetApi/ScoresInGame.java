@@ -8,5 +8,8 @@ public class ScoresInGame {
     public ScoreDetails getScore() {
         return score;
     }
-
+    public String getGameDesc()
+    {
+        return description;
+    }
 }

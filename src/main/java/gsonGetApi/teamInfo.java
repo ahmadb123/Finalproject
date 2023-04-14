@@ -11,8 +11,7 @@ public class teamInfo {
         private Coach[] coaches;
         private Latest[] latest;
         private Latest[] upcoming;
-        private Season[] seasons;
-    
+        private Season[] seasons;    
      public Latest[] getLatestInfo()
      {
          return latest;
@@ -52,4 +51,5 @@ public class teamInfo {
     {
         return seasons;
     }
+    
 }
