@@ -19,7 +19,7 @@ public class LatestFixturesApi {
     public static LatestFixturesApi getLatestFixtureByDate(LocalDate fromDate, LocalDate toDate) {
         Gson gson = new Gson();
         try {
-            URL url = new URL("https://api.sportmonks.com/v3/football/fixtures/between/" + fromDate + "/" + toDate + "?api_token=MiZTldKex63o2mbR2Rf1iwRIn5ZK17ErFR1ianlfJaoCeBltZuLY27B8rYXF&include=scores;participants"
+            URL url = new URL("https://api.sportmonks.com/v3/football/fixtures/between/" + fromDate + "/" + toDate + "?api_token=LYBrIj6r7azh3KhVgVjM8YAFeMRVBh68EkhD7cGfilOL2FJKwpLxIL62KvE3&include=scores;participants;events.player&filters=eventTypes:14,19"
         );
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -34,8 +34,13 @@ public class LatestFixturesApi {
         return null;
     }
        private static class GsonExperiments {
-        public GsonExperiments() {
-        }
     }
-
+       public static void main(String args[])
+       {
+            LocalDate currentDate = LocalDate.now();
+        LocalDate fromDate = currentDate.minusDays(1);
+           LatestFixturesApi rep = LatestFixturesApi.getLatestFixtureByDate(currentDate, fromDate);
+           System.out.print(rep.data[0].getGameTime());
+       }
 }
+

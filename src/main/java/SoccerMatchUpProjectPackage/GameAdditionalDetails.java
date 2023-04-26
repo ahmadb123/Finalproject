@@ -45,7 +45,7 @@ public class GameAdditionalDetails extends javax.swing.JFrame {
     
     matchPanel.setPreferredSize(new Dimension(100, 80));
     windowPanel.setPreferredSize(new Dimension(500,225));
-    for(int i = 0; i < gameLabel.length-1; i++) {
+    for(int i = 0; i < gameLabel.length - 1; i++) {
         gameLabel[i].setFont(teamNameFont);
         matchPanel.add(gameLabel[i]);
     }
@@ -57,6 +57,7 @@ public class GameAdditionalDetails extends javax.swing.JFrame {
     JButton backButton = new javax.swing.JButton();
     JButton getTopScorer = new javax.swing.JButton();
     JButton showFullDetails = new javax.swing.JButton();
+    JButton gameEvent = new javax.swing.JButton();
 
     teamOnePlayers.setText("Squad 1");
     teamOnePlayers.addActionListener(new java.awt.event.ActionListener() {
@@ -105,12 +106,21 @@ public class GameAdditionalDetails extends javax.swing.JFrame {
             showFullDetailsActionPerformed(evt);
         }
     });
+    
+    gameEvent.setText("Events");
+    gameEvent.addActionListener(new java.awt.event.ActionListener() {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            gameEvents(evt);
+        }
+    });
     JPanel buttonsPanel = new JPanel(new GridLayout(2,3,10,10)); // Use a GridLayout with 2 rows and 3 columns
     buttonsPanel.add(teamOnePlayers);
     buttonsPanel.add(teamTwoPlayers);
     buttonsPanel.add(standingTable);
     buttonsPanel.add(getTopScorer);
     buttonsPanel.add(showFullDetails);
+    buttonsPanel.add(gameEvent);
     buttonsPanel.add(backButton);
     windowPanel.add(buttonsPanel, BorderLayout.CENTER); // Add the buttons panel to the center of the window panel
     JScrollPane scrollPane = new JScrollPane(windowPanel);
@@ -176,6 +186,44 @@ public class GameAdditionalDetails extends javax.swing.JFrame {
         playersFrame.setVisible(true);  
         playersFrame.setLocationRelativeTo(null);
     }
+
+    private void gameEvents(java.awt.event.ActionEvent evt) {
+        List<JLabel[]> events = AllGames.getGameEvent(gameIndex);
+
+        if (events == null || events.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No events for this game.");
+        } else {
+        JPanel panel = new JPanel();
+        JPanel goalsPanel = new JPanel();
+        goalsPanel.setLayout(new BoxLayout(goalsPanel, BoxLayout.PAGE_AXIS));
+        JPanel yellowCardsPanel = new JPanel();
+        yellowCardsPanel.setLayout(new BoxLayout(yellowCardsPanel, BoxLayout.PAGE_AXIS));
+
+        for (JLabel[] event : events) {
+            if (event[0].getText().startsWith("GOAL")) {
+                goalsPanel.add(event[0]);
+                goalsPanel.add(event[1]);
+                goalsPanel.add(event[2]);
+                panel.add(goalsPanel);
+            } else if (event[0].getText().startsWith("YELLOW CARD")) {
+                yellowCardsPanel.add(event[0]);
+                yellowCardsPanel.add(event[1]);
+                yellowCardsPanel.add(event[2]);
+                panel.add(yellowCardsPanel);
+            }
+        }
+       JScrollPane scrollPane = new JScrollPane(panel);
+
+        JFrame frame = new JFrame(" Game Events");
+        frame.getContentPane().add(scrollPane);
+        frame.pack();
+        frame.setSize(panel.getPreferredSize().width,panel.getPreferredSize().height);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+    }
+
+   }
+
 
     private void standingTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standingTableActionPerformed
         PlayerLabel teamStanding = new PlayerLabel(gameIndex);

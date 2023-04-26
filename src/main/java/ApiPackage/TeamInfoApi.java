@@ -9,7 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +18,7 @@ public class TeamInfoApi {
     public static TeamInfoApi getTeamInfo(String teamName) {
         Gson gson = new Gson();
         try {
-            URL url = new URL("https://api.sportmonks.com/v3/football/teams/search/" + teamName + "?api_token=MiZTldKex63o2mbR2Rf1iwRIn5ZK17ErFR1ianlfJaoCeBltZuLY27B8rYXF&include=players.player.position;coaches.coach;seasons;latest.scores;latest.participants");
+            URL url = new URL("https://api.sportmonks.com/v3/football/teams/search/" + teamName + "?api_token=LYBrIj6r7azh3KhVgVjM8YAFeMRVBh68EkhD7cGfilOL2FJKwpLxIL62KvE3&include=players.player.position;coaches.coach;seasons;latest.scores;latest.participants");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             TeamInfoApi response = gson.fromJson(in, TeamInfoApi.class);
@@ -33,9 +32,9 @@ public class TeamInfoApi {
         }
         return null;
     }
-
        private static class GsonExperiments {
         public GsonExperiments() {
         }
     }
+
 }

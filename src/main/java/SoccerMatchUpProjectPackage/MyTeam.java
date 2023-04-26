@@ -100,26 +100,37 @@ public class MyTeam {
     return squadLabel;
   }
   
+    // the issue with this api is that each team competes in more than one competition- 
+    // therefore, I should check if the leagueId that is being passed corresponds 
     public static List<JLabel[]> getTeamsStandings(String teamName) {
         List<JLabel[]> standingTable = new ArrayList<>();
         TeamInfoApi response = TeamInfoApi.getTeamInfo(teamName);
         int homeTeamId = response.data[0].getTeamId();
-        int leagueId = response.data[0].getSeasonsInfo()[0].getLeagueId();
-        StandingTableApi standingTableResp = StandingTableApi.getTable(leagueId, homeTeamId);
-
-        for (int i = 0; i < standingTableResp.data.length; i++) {
-          int position = standingTableResp.data[i].getPosition();
-          int points = standingTableResp.data[i].getPoints();
-          String allTeamsInTheTable = standingTableResp.data[i].getTeamInfo().getTeamName();
-          ImageIcon teamIcon = getScaledIcon(standingTableResp.data[i].getTeamInfo().getTeamIcon());
-            JLabel[] standingInfo = new JLabel[] { 
-                new JLabel("Position: " + position), 
-                new JLabel("Points: " + points), 
-                new JLabel("Team Name: "  +  allTeamsInTheTable),
-                new JLabel(teamIcon)
+        int leagueId = response.data[0].getSeasonsInfo().length;
+        for (int i = 0; i < leagueId; i++) {
+            leagueId = response.data[0].getSeasonsInfo()[i].getLeagueId();
+            try{
+                StandingTableApi standingTableResp = StandingTableApi.getTable(leagueId, homeTeamId);
+                for (int k = 0; k < standingTableResp.data.length; k++) {
+                int position = standingTableResp.data[k].getPosition();
+                int points = standingTableResp.data[k].getPoints();
+                String allTeamsInTheTable = standingTableResp.data[k].getTeamInfo().getTeamName();
+                ImageIcon teamIcon = getScaledIcon(standingTableResp.data[k].getTeamInfo().getTeamIcon());
+                JLabel[] standingInfo = new JLabel[] { 
+                    new JLabel("Position: " + position), 
+                    new JLabel("Points: " + points), 
+                    new JLabel("Team Name: "  +  allTeamsInTheTable),
+                    new JLabel(teamIcon)
+                };
+             standingTable.add(standingInfo);  
             };
-            standingTable.add(standingInfo);
+            break;
+            } catch (NullPointerException e) {
+                // The response was null, so we caught an exception
+                System.out.println("LeagueId " + leagueId + " didn't work.");
+            }
         }
     return standingTable;
     }
 }
+

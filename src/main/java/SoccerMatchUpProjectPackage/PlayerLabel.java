@@ -1,9 +1,10 @@
 package SoccerMatchUpProjectPackage;
 
-import static SoccerMatchUpProjectPackage.AllGames.getScaledIcon;
+
 import ApiPackage.TopScorerApi;
 import ApiPackage.TeamInfoApi;
 import ApiPackage.StandingTableApi;
+import static SoccerMatchUpProjectPackage.AllGames.getScaledIcon;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;

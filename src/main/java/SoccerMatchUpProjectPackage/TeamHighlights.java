@@ -147,6 +147,10 @@ public class TeamHighlights extends javax.swing.JFrame {
     
     private void standing(java.awt.event.ActionEvent evt) {
         myStanding = MyTeam.getTeamsStandings(teamName);
+        if(myStanding == null)
+        {
+            return;
+        }
         JPanel panel = new JPanel(new GridLayout(myStanding.size(), 5));
 
         int counter = 0;

@@ -19,7 +19,7 @@ public class RecentTransfersApi {
     {
          Gson gson = new Gson();
         try {
-            URL url = new URL("https://api.sportmonks.com/v3/football/transfers/latest?api_token=MiZTldKex63o2mbR2Rf1iwRIn5ZK17ErFR1ianlfJaoCeBltZuLY27B8rYXF&include=player;fromTeam;toTeam"
+            URL url = new URL("https://api.sportmonks.com/v3/football/transfers/latest?api_token=LYBrIj6r7azh3KhVgVjM8YAFeMRVBh68EkhD7cGfilOL2FJKwpLxIL62KvE3&include=player;fromTeam;toTeam"
             );
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));

@@ -2,6 +2,7 @@ package SoccerMatchUpProjectPackage;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -27,10 +28,11 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
         initGameLabels();
     }
-
+    
+    
 
     private void initGameLabels() {
-
+        
         setTitle("Main Window"); // call setTitle method 
         buttons = new ArrayList<>();
 
@@ -38,8 +40,7 @@ public class MainWindow extends javax.swing.JFrame {
         JPanel panel = new JPanel();
         
         JButton upcomingFixtures = new javax.swing.JButton(); // create JButton
-        upcomingFixtures.setText("Who's playing today?");
-        upcomingFixtures.setBounds(580, 0, 150, 70);
+        upcomingFixtures.setText("Upcoming Games this month");
         upcomingFixtures.addActionListener(new ActionListener() { // call addActionListner method
             public void actionPerformed(ActionEvent evt) {
             upcomingLiveFixture(evt);
@@ -48,7 +49,6 @@ public class MainWindow extends javax.swing.JFrame {
         
         JButton searchTeam = new javax.swing.JButton();
         searchTeam.setText("Search Team");
-        searchTeam.setBounds(730 , 0 , 150 , 70);
         searchTeam.addActionListener(new java.awt.event.ActionListener()
                 {
                     public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -73,8 +73,8 @@ public class MainWindow extends javax.swing.JFrame {
         JLabel textLabel = new JLabel("Popular Recent Football fixtures: ");
         textLabel.setFont(jlabelFont);
         gameLabelsPanel.add(textLabel);
-                  // Get the game labels for each fixture
-        List<JLabel[]> gameLabelsList = AllGames.getGameLabels();
+        // Get the game labels for each fixture
+        List<JLabel[]> gameLabelsList = AllGames.getRecentGameLabels();
 
         // Create a new panel for each game and add it to the gameLabelsPanel
         for (int i = 0; i < gameLabelsList.size(); i++) {
@@ -89,10 +89,10 @@ public class MainWindow extends javax.swing.JFrame {
                 }
             });
             buttons.add(showGameDetails);
-            JPanel gamePanel = new JPanel(); // Set the layout of the panel
+            
+            JPanel gamePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0 , 0)); // Set the layout of the panel
             gamePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 4)); // Set a border
-            gamePanel.setBackground(Color.WHITE); // Set a background color
-
+            gamePanel.setBackground(Color.WHITE); // Set a background color     
             // Add the game labels to the game panel
             gameLabels[0].setFont(teamNameFont);
             gamePanel.add(gameLabels[0]);
@@ -102,12 +102,16 @@ public class MainWindow extends javax.swing.JFrame {
             gamePanel.add(gameLabels[3]);
             gameLabels[4].setFont(teamNameFont);
             gamePanel.add(gameLabels[4]);
-    
             gamePanel.add(showGameDetails);
+            
+            JPanel timePanel = new JPanel();
+            timePanel.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 3));
+
+            timePanel.add(gameLabels[6]);
+            gamePanel.add(timePanel);
             // Add the game panel to the gameLabelsPanel
             gameLabelsPanel.add(gamePanel);
         }
-        
         gameLabelsPanel.add(upcomingFixtures); // update the button to the panel
         gameLabelsPanel.add(searchTeam); // update the button to the panel
         gameLabelsPanel.add(news);
@@ -136,7 +140,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void showGameDetails(java.awt.event.ActionEvent evt) {
         int buttonIndex = buttons.indexOf(evt.getSource());
         if (buttonIndex >= 0) {
-            JLabel[] gameLabels = AllGames.getGameLabels().get(buttonIndex);
+            JLabel[] gameLabels = AllGames.getRecentGameLabels().get(buttonIndex);
             gameAdditionalDetailsWin = new GameAdditionalDetails( gameLabels, buttonIndex);
             gameAdditionalDetailsWin.setVisible(true);
             this.setVisible(false);
@@ -146,29 +150,9 @@ public class MainWindow extends javax.swing.JFrame {
     }
     private void upcomingLiveFixture(ActionEvent evt) {
         List<JLabel[]> matchLabels = AllGames.getUpcomingFixtures();
-        if (matchLabels == null) {
-            // no upcoming games
-
-            return;
-        }
-
-        // Create a new JFrame to show the matches
-        JFrame frame = new JFrame("Upcoming Matches");
-        JPanel panel = new JPanel(new GridLayout(matchLabels.size(), 2));
-
-        // Loop through the matches and add them to the panel
-        for (JLabel[] matchLabel : matchLabels) {
-            panel.add(matchLabel[0]);
-            panel.add(matchLabel[1]);
-        }
-
-        // Add the panel to the frame and show it
-        frame.getContentPane().add(panel);
-        frame.pack();
-        frame.setSize(550,500);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+//        initGameLabels();
     }
+    
     
     private void searchTeam(java.awt.event.ActionEvent evt)
     {
@@ -203,7 +187,7 @@ public class MainWindow extends javax.swing.JFrame {
         // Add the panel to the frame and show it
         frame.getContentPane().add(panel);
         frame.pack();
-        frame.setSize(850,1000);
+        frame.setSize(panel.getPreferredSize().width,panel.getPreferredSize().height);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
     }
